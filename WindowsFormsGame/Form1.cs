@@ -29,10 +29,11 @@ namespace WindowsFormsGame
         int score = 0;
         Random rnd = new Random();
         //plane112
-        Bitmap src = new Bitmap("C:/Users/m.ibrahim/Pictures/pl.png");
+        Bitmap src = new Bitmap("pl.png");
         //  Bitmap src = new Bitmap("C:/Users/m.ibrahim/Pictures/unnamed.png");
-        Bitmap srcr = new Bitmap("C:/Users/m.ibrahim/Pictures/rocket-ship-launch-missile-pngrepo-com.png");
-        Bitmap srcE = new Bitmap("C:/Users/m.ibrahim/Pictures/unnamedE.png");
+        Bitmap srcr = new Bitmap("rocket-ship-launch-missile-pngrepo-com.png");
+        Bitmap srcE = new Bitmap("unnamedE.png");
+        Bitmap srcEx = new Bitmap("b.jpeg");
         public Form1()
         {
             InitializeComponent();
@@ -144,6 +145,10 @@ namespace WindowsFormsGame
                 Font bigFont = new Font(SystemFonts.DefaultFont.FontFamily, 17, FontStyle.Regular);
                 //  g.DrawString("game over",Font,bru,this.Width/2,this.Height/2);
                 g.FillRectangle(bru2, rockRect);
+                g.DrawImage(srcEx, rockRect);
+
+                //System.Media.SoundPlayer player3 = new System.Media.SoundPlayer("mixkit-arcade-retro-jump-223.wav");
+                //player3.Play();
                 g.DrawString("game over", bigFont, bru, this.Width / 2, this.Height / 2);
                 timer1.Stop();
             }
@@ -152,7 +157,7 @@ namespace WindowsFormsGame
                 Font bigFont = new Font(SystemFonts.DefaultFont.FontFamily, 17, FontStyle.Regular);
 
                 g.FillRectangle(bru2, rockRect2);
-
+                g.DrawImage(srcEx, rockRect2);
                 //  g.DrawString("game over",Font,bru,this.Width/2,this.Height/2);
                 g.DrawString("game over", bigFont, bru, this.Width / 2, this.Height / 2);
                 timer1.Stop();
@@ -162,8 +167,13 @@ namespace WindowsFormsGame
             {
                 yE = -100;
                xE= rnd.Next(this.Width / 2);
-                g.FillRectangle(bru2, rockRect);
-              //  System.Media.SystemSounds.Hand.Play();
+               g.FillRectangle(bru2, rockRect);
+                g.DrawImage(srcEx, rockRect);
+
+                //mixkit-extra-bonus-in-a-video-game-2045
+                //System.Media.SoundPlayer player = new System.Media.SoundPlayer("mixkit-extra-bonus-in-a-video-game-2045.wav");
+                //player.Play();
+                //  System.Media.SystemSounds.Hand.Play();
                 //  rockRect.Inflate(10, 10);
                 //  Font bigFont = new Font(SystemFonts.DefaultFont.FontFamily, 17, FontStyle.Regular);
                 //  g.DrawString("game over",Font,bru,this.Width/2,this.Height/2);
@@ -176,8 +186,11 @@ namespace WindowsFormsGame
             {
                 yE2 = -50;
                 xE = rnd.Next(this.Width / 2);
-                g.FillRectangle(bru2, rockRect2);
-           //     System.Media.SystemSounds.Question.Play();
+             g.FillRectangle(bru2, rockRect2);
+                g.DrawImage(srcEx, rockRect2);
+                //System.Media.SoundPlayer player1 = new System.Media.SoundPlayer("mixkit-extra-bonus-in-a-video-game-2045.wav");
+                //player1.Play();
+                //     System.Media.SystemSounds.Question.Play();
                 //  rockRect.Inflate(10, 10);
                 //  Font bigFont = new Font(SystemFonts.DefaultFont.FontFamily, 17, FontStyle.Regular);
                 //  g.DrawString("game over",Font,bru,this.Width/2,this.Height/2);
@@ -209,7 +222,7 @@ namespace WindowsFormsGame
 
             if (isFired == true)
             {
-                yM -= 20;
+                yM -= 30;
              //   xM -= 3;
         }
 
